@@ -10,7 +10,7 @@ services:
     depends_on:
       - redis
   redis:
-    image: redis:7
+    image: docker/dhi-redis:7
     volumes:
       - redis-data:/data
 volumes:
