@@ -1,0 +1,17 @@
+{
+    "name": "docker-workshop_software-supply-chain",
+    "version": "1.0.0",
+    "type": "module",
+    "private": true,
+    "scripts": {
+        "start": "node src/server.js",
+        "dev": "nodemon --watch src/* src/server.js"
+    },
+    "dependencies": {
+        "express": "4.19.1",
+        "redis": "^4.7.1"
+    },
+    "devDependencies": {
+        "nodemon": "^3.1.0"
+    }
+}
