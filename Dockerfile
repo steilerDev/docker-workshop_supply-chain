@@ -1,5 +1,5 @@
 # Dockerfile
-FROM node:20-alpine
+FROM docker/dhi-node:20-alpine3.22-dev
 
 WORKDIR /app
 
