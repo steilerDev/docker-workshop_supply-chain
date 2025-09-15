@@ -1,0 +1,43 @@
+// For format details, see https://aka.ms/vscode-remote/devcontainer.json or this file's README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.117.1/containers/typescript-node-12
+{
+	"name": "docker-workshop_software-supply-chain",
+    "image": "mcr.microsoft.com/devcontainers/base:bookworm",
+    "features": {
+        "ghcr.io/devcontainers/features/common-utils:2": {
+			"username": "vscode",
+			"userUid": "1000",
+			"userGid": "1000",
+            "nonFreePackages": "true",
+			"upgradePackages": "true"
+		},
+        "ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
+            "packages": "git,tmux,vim,wget,jq,tree,whois,db-util,rsync,zip,unzip,ca-certificates,curl,gnupg"
+        },
+        "ghcr.io/devcontainers/features/github-cli:1": {
+            "version": "latest"
+        },
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "20"
+        },
+        "ghcr.io/itsmechlark/features/redis-server:1": {
+            "version": "7"
+        },
+        "ghcr.io/devcontainers/features/docker-in-docker:2": {
+            "version": "latest"
+        }
+    },
+
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ritwickdey.LiveServer",
+                "vscodevim.vim"
+            ]
+        }
+    },
+
+	"postCreateCommand": "curl -fsSL https://raw.githubusercontent.com/docker/scout-cli/main/install.sh | sh && npm install",
+
+	"remoteUser": "vscode"
+}
