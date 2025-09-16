@@ -13,5 +13,6 @@ services:
     image: docker/dhi-redis:7
     volumes:
       - redis-data:/data
+      - ./config/redis.conf:/etc/redis/conf.d/redis.conf
 volumes:
   redis-data:
